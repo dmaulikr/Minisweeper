@@ -106,26 +106,40 @@ class ViewController: UIViewController {
     func squareButtonPressed(sender: SquareButton) {
         if(!sender.square.isRevealed) {
             sender.square.isRevealed = true
-            sender.setTitle("\(sender.getLabelText())", forState: .Normal)
+//            sender.setTitle("\(sender.getLabelText())", forState: .Normal)
             println("\(sender.tag)")
             if(sender.square.numNeighboringMines == 0 && sender.square.isMineLocation == false) {
                 clearAdjacentEmptySquares(sender)
             }
             
         }
+        updateSquareTitle()
         if sender.square.isMineLocation {
             self.minePressed()
         }
         self.moves++
     }
     
-    let offsets = [(0,1),(-1,0),(0,-1),(1,0),(-1,-1),(1,1),(-1,1),(1,-1)]
+    
+    func updateSquareTitle() {
+        for row in 0 ..< board.size {
+            for col in 0 ..< board.size {
+                var tag:Int = (row * board.size) + col
+                if (squareButtons[tag].square.isRevealed == true) {
+                    squareButtons[tag].setTitle("\(squareButtons[tag].getLabelText())", forState: .Normal)
+                }
+            }
+        }
+        
+    }
+    
     
     func clearAdjacentEmptySquares(button: SquareButton) {
+        let offsets = [(0,1),(-1,0),(0,-1),(1,0),(-1,-1),(1,1),(-1,1),(1,-1)]
         button.square.isRevealed = true
-        button.setTitle("\(button.getLabelText())", forState: .Normal)
+//        button.setTitle("\(button.getLabelText())", forState: .Normal)
         println("\(button.tag)")
-        for (rOffset,cOffset) in self.offsets {
+        for (rOffset,cOffset) in offsets {
             //translate tag
             var rowcol:Int = button.tag
             var row:Int = rowcol/board.size
@@ -149,7 +163,7 @@ class ViewController: UIViewController {
             }
             if (squareButtons[tag].square.isMineLocation == false) {
                 squareButtons[tag].square.isRevealed = true
-                squareButtons[tag].setTitle("\(squareButtons[tag].getLabelText())", forState: .Normal)
+//                squareButtons[tag].setTitle("\(squareButtons[tag].getLabelText())", forState: .Normal)
                 println("\(squareButtons[tag].tag)")
             }
             

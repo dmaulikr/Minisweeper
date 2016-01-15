@@ -16,6 +16,7 @@
 		44DE07101C4012AF00AB1404 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE070F1C4012AF00AB1404 /* Square.swift */; };
 		44DE07121C40134900AB1404 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE07111C40134900AB1404 /* Board.swift */; };
 		44DE07141C40141500AB1404 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE07131C40141500AB1404 /* SquareButton.swift */; };
+		9B2AA4414334F043B316591C /* libPods-Mineswifter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A93883FBA30F86DBF94EA931 /* libPods-Mineswifter.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,9 @@
 		44DE070F1C4012AF00AB1404 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		44DE07111C40134900AB1404 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		44DE07131C40141500AB1404 /* SquareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
+		703F01E98BB16F544B74269F /* Pods-Mineswifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mineswifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mineswifter/Pods-Mineswifter.debug.xcconfig"; sourceTree = "<group>"; };
+		A174860E2FA7FEF7D839E3E9 /* Pods-Mineswifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mineswifter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mineswifter/Pods-Mineswifter.release.xcconfig"; sourceTree = "<group>"; };
+		A93883FBA30F86DBF94EA931 /* libPods-Mineswifter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mineswifter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2AA4414334F043B316591C /* libPods-Mineswifter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +67,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075F66520FF7D8E0DE2FC072 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				703F01E98BB16F544B74269F /* Pods-Mineswifter.debug.xcconfig */,
+				A174860E2FA7FEF7D839E3E9 /* Pods-Mineswifter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4405F4B31C49972400D231CE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				44DE06EF1C400E0C00AB1404 /* AppDelegate.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		4405F4B41C49978300D231CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44DE07131C40141500AB1404 /* SquareButton.swift */,
+				44DE07111C40134900AB1404 /* Board.swift */,
+				44DE070F1C4012AF00AB1404 /* Square.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4405F4B51C4997BB00D231CE /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				44DE06F81C400E0C00AB1404 /* LaunchScreen.xib */,
+				44DE06F31C400E0C00AB1404 /* Main.storyboard */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+		4405F4B61C4997DF00D231CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44DE06F11C400E0C00AB1404 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		44DE06E11C400E0C00AB1404 = {
 			isa = PBXGroup;
 			children = (
 				44DE06EC1C400E0C00AB1404 /* Mineswifter */,
 				44DE07021C400E0D00AB1404 /* MineswifterTests */,
 				44DE06EB1C400E0C00AB1404 /* Products */,
+				075F66520FF7D8E0DE2FC072 /* Pods */,
+				B86A7AE2FA5AA87F345851A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,14 +134,11 @@
 		44DE06EC1C400E0C00AB1404 /* Mineswifter */ = {
 			isa = PBXGroup;
 			children = (
-				44DE06EF1C400E0C00AB1404 /* AppDelegate.swift */,
-				44DE06F11C400E0C00AB1404 /* ViewController.swift */,
-				44DE06F31C400E0C00AB1404 /* Main.storyboard */,
-				44DE070F1C4012AF00AB1404 /* Square.swift */,
-				44DE07111C40134900AB1404 /* Board.swift */,
-				44DE07131C40141500AB1404 /* SquareButton.swift */,
+				4405F4B31C49972400D231CE /* Other */,
+				4405F4B61C4997DF00D231CE /* Controllers */,
+				4405F4B41C49978300D231CE /* Models */,
+				4405F4B51C4997BB00D231CE /* Layouts */,
 				44DE06F61C400E0C00AB1404 /* Images.xcassets */,
-				44DE06F81C400E0C00AB1404 /* LaunchScreen.xib */,
 				44DE06ED1C400E0C00AB1404 /* Supporting Files */,
 			);
 			path = Mineswifter;
@@ -121,6 +169,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B86A7AE2FA5AA87F345851A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A93883FBA30F86DBF94EA931 /* libPods-Mineswifter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44DE07091C400E0D00AB1404 /* Build configuration list for PBXNativeTarget "Mineswifter" */;
 			buildPhases = (
+				44767744EE1C71B7A7192667 /* Check Pods Manifest.lock */,
 				44DE06E61C400E0C00AB1404 /* Sources */,
 				44DE06E71C400E0C00AB1404 /* Frameworks */,
 				44DE06E81C400E0C00AB1404 /* Resources */,
+				99F9819CADC99758081CB7DE /* Embed Pods Frameworks */,
+				E69C2A75ADE52D3D8AB67D2B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,6 +274,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44767744EE1C71B7A7192667 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99F9819CADC99758081CB7DE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mineswifter/Pods-Mineswifter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E69C2A75ADE52D3D8AB67D2B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mineswifter/Pods-Mineswifter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44DE06E61C400E0C00AB1404 /* Sources */ = {
@@ -352,6 +459,7 @@
 		};
 		44DE070A1C400E0D00AB1404 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 703F01E98BB16F544B74269F /* Pods-Mineswifter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Mineswifter/Info.plist;
@@ -362,6 +470,7 @@
 		};
 		44DE070B1C400E0D00AB1404 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A174860E2FA7FEF7D839E3E9 /* Pods-Mineswifter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Mineswifter/Info.plist;
@@ -423,6 +532,7 @@
 				44DE070B1C400E0D00AB1404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44DE070C1C400E0D00AB1404 /* Build configuration list for PBXNativeTarget "MineswifterTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +541,7 @@
 				44DE070E1C400E0D00AB1404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

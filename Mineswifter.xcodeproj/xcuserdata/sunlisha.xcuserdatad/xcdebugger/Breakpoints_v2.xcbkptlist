@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mineswifter/ViewController.swift"
-            timestampString = "474574908.464656"
+            timestampString = "474585496.149303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "clearAdjacentEmptySquares(_:)"
             landmarkType = "5">
          </BreakpointContent>
