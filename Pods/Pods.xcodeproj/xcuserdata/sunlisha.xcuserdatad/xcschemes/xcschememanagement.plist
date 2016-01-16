@@ -14,15 +14,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MineswifterTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>569735B422E0E4CEEFC5C6955AFDE3A5</key>
+		<key>15F464BFBB09093EB49C7A2B90C4810F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E10244ACA8EC1AEFD73A229FE88E470E</key>
+		<key>A2F6E21B670DC565238510DE02DEA9F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7AC9326D819482593FE118E915409D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C019CB1B122A5969F87A3D49F037A829</key>
 		<dict>
 			<key>primary</key>
 			<true/>

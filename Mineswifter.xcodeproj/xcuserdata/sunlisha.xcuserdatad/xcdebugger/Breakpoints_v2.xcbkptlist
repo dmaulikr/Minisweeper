@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mineswifter/ViewController.swift"
-            timestampString = "474220974.686798"
+            timestampString = "474602214.760637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "newGamePressed()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mineswifter/ViewController.swift"
-            timestampString = "474585496.149303"
+            timestampString = "474603049.199326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "clearAdjacentEmptySquares(_:)"
             landmarkType = "5">
          </BreakpointContent>

@@ -16,6 +16,7 @@
 		44DE07101C4012AF00AB1404 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE070F1C4012AF00AB1404 /* Square.swift */; };
 		44DE07121C40134900AB1404 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE07111C40134900AB1404 /* Board.swift */; };
 		44DE07141C40141500AB1404 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE07131C40141500AB1404 /* SquareButton.swift */; };
+		924F407118C083457F9983EF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137BA497FCEEA5F30ED1DF8D /* Pods.framework */; };
 		9B2AA4414334F043B316591C /* libPods-Mineswifter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A93883FBA30F86DBF94EA931 /* libPods-Mineswifter.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		137BA497FCEEA5F30ED1DF8D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4405F4BC1C49A60200D231CE /* Mineswifter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mineswifter-Bridging-Header.h"; sourceTree = "<group>"; };
 		44DE06EA1C400E0C00AB1404 /* Mineswifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mineswifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DE06EE1C400E0C00AB1404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44DE06EF1C400E0C00AB1404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B2AA4414334F043B316591C /* libPods-Mineswifter.a in Frameworks */,
+				924F407118C083457F9983EF /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				44DE06EE1C400E0C00AB1404 /* Info.plist */,
+				4405F4BC1C49A60200D231CE /* Mineswifter-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A93883FBA30F86DBF94EA931 /* libPods-Mineswifter.a */,
+				137BA497FCEEA5F30ED1DF8D /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,7 +309,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mineswifter/Pods-Mineswifter-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E69C2A75ADE52D3D8AB67D2B /* Copy Pods Resources */ = {
@@ -318,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mineswifter/Pods-Mineswifter-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -16,9 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    let BOARD_SIZE:Int = 20
+    // Create a reference to a Firebase location
+    var myRootRef = Firebase(url:"https://minisweeper.firebaseio.com")
+    var revealed:[[Bool]] = []
+
+    let BOARD_SIZE:Int = 10
     var board:Board
     var squareButtons:[SquareButton] = []
+  
     
     var oneSecondTimer:NSTimer?
     
@@ -50,12 +55,29 @@ class ViewController: UIViewController {
         self.startNewGame()
     }
     
+    func initializeFirebase() {
+        myRootRef.removeValue()
+        revealed.removeAll()
+        for row in 0 ..< board.size {
+            revealed.append(Array(count:board.size, repeatedValue:Bool()))
+            for col in 0 ..< board.size {
+                var tag:Int = (row * board.size) + col
+                var tagString = String(tag)
+                let squareItem = false
+                let squareItemRef = self.myRootRef.childByAppendingPath(tagString)
+                squareItemRef.setValue(squareItem)
+            }
+        }
+    }
+    
     func initializeBoard() {
+        
+        initializeFirebase()
+        
         for row in 0 ..< board.size {
             for col in 0 ..< board.size {
-                
                 let square = board.squares[row][col]
-                
+               
                 let squareSize:CGFloat = self.boardView.frame.width / CGFloat(BOARD_SIZE)
                 
                 let squareMargin:CGFloat = self.boardView.frame.width - (squareSize * CGFloat(BOARD_SIZE))
@@ -73,6 +95,8 @@ class ViewController: UIViewController {
     }
     
     func resetBoard() {
+        // reset Firebase database
+        initializeFirebase()
         // resets the board with new mine locations & sets isRevealed to false for each square
         self.board.resetBoard()
         // iterates through each button and resets the text to the default value
@@ -103,28 +127,56 @@ class ViewController: UIViewController {
         self.startNewGame()
     }
     
+    func convertRowColToTag(row: Int, col: Int) -> Int {
+        var tag:Int = (row * board.size) + col
+        return tag
+    }
+    
     func squareButtonPressed(sender: SquareButton) {
         if(!sender.square.isRevealed) {
+            var tagString = String(sender.tag)
+            self.myRootRef.childByAppendingPath(tagString).setValue(true)
             sender.square.isRevealed = true
-//            sender.setTitle("\(sender.getLabelText())", forState: .Normal)
-            println("\(sender.tag)")
             if(sender.square.numNeighboringMines == 0 && sender.square.isMineLocation == false) {
                 clearAdjacentEmptySquares(sender)
             }
-            
         }
+        updateRevealedFromFirebase()
         updateSquareTitle()
         if sender.square.isMineLocation {
             self.minePressed()
         }
         self.moves++
+        
+    }
+    
+    func updateRevealedFromFirebase() {
+        for row in 0 ..< board.size {
+            for col in 0 ..< board.size {
+                var tag:Int = convertRowColToTag(row, col: col)
+                var tagString = String(tag)
+                self.myRootRef.childByAppendingPath(tagString).observeEventType(.Value, withBlock: {
+                    snapshot in
+                    //                    println("\(snapshot.key) -> \(snapshot.value)")
+                    if let value:Int = snapshot.value as? Int {
+                        if (value == 1) {
+                            self.squareButtons[tag].square.isRevealed = true
+                        }
+                        else {
+                            self.squareButtons[tag].square.isRevealed = false
+                        }
+                        println("\(self.squareButtons[tag].square.isRevealed)")
+                    }
+                })
+            }
+        }
     }
     
     
     func updateSquareTitle() {
         for row in 0 ..< board.size {
             for col in 0 ..< board.size {
-                var tag:Int = (row * board.size) + col
+                var tag:Int = convertRowColToTag(row, col: col)
                 if (squareButtons[tag].square.isRevealed == true) {
                     squareButtons[tag].setTitle("\(squareButtons[tag].getLabelText())", forState: .Normal)
                 }
@@ -137,8 +189,8 @@ class ViewController: UIViewController {
     func clearAdjacentEmptySquares(button: SquareButton) {
         let offsets = [(0,1),(-1,0),(0,-1),(1,0),(-1,-1),(1,1),(-1,1),(1,-1)]
         button.square.isRevealed = true
-//        button.setTitle("\(button.getLabelText())", forState: .Normal)
-        println("\(button.tag)")
+        var tagString = String(button.tag)
+        self.myRootRef.childByAppendingPath(tagString).setValue(true)
         for (rOffset,cOffset) in offsets {
             //translate tag
             var rowcol:Int = button.tag
@@ -156,15 +208,16 @@ class ViewController: UIViewController {
     func getEmptyTileAtLocation(row : Int, col : Int) -> SquareButton? {
         
         if row >= 0 && row < self.board.size && col >= 0 && col < self.board.size{
-            var tag:Int = (row * board.size) + col
+            var tag:Int = convertRowColToTag(row, col: col)
             
             if (squareButtons[tag].square.numNeighboringMines == 0 && squareButtons[tag].square.isRevealed == false && squareButtons[tag].square.isMineLocation == false) {
                 return squareButtons[tag]
             }
             if (squareButtons[tag].square.isMineLocation == false) {
                 squareButtons[tag].square.isRevealed = true
-//                squareButtons[tag].setTitle("\(squareButtons[tag].getLabelText())", forState: .Normal)
-                println("\(squareButtons[tag].tag)")
+                var tagString = String(tag)
+                self.myRootRef.childByAppendingPath(tagString).setValue(true)
+
             }
             
         }

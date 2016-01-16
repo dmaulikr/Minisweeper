@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '406FC6DF984983A62C8339AF'
+               BlueprintIdentifier = '9AD446120906F4429DF51698'
                BlueprintName = 'Pods-Mineswifter'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-Mineswifter.a'>
+               BuildableName = 'Pods_Mineswifter.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

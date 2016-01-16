@@ -7,18 +7,32 @@
 //
 
 import Foundation
+import Firebase
 
 class Board {
+    
+    var ref = Firebase(url:"https://minisweeper.firebaseio.com")
+    
     let size:Int
     var squares:[[Square]] = [] // a 2d array of square cells, indexed by [row][column]
+//    var revealed:[[Bool]] = []
+    
     init(size:Int) {
         self.size = size
         
         for row in 0 ..< size {
+//            revealed.append(Array(count:size, repeatedValue:Bool()))
             var squareRow:[Square] = []
             for col in 0 ..< size {
                 let square = Square(row: row, col: col)
                 squareRow.append(square)
+                
+//                var tag:Int = (row * size) + col
+//                var tagString = String(tag)
+//                let squareItem = false
+//                let squareItemRef = self.ref.childByAppendingPath(tagString)
+//                squareItemRef.setValue(squareItem)
+                
             }
             squares.append(squareRow)
         }
@@ -27,7 +41,11 @@ class Board {
     func resetBoard() {
         // assign mines to squares
         for row in 0 ..< size {
+            
             for col in 0 ..< size {
+                
+            
+                
                 squares[row][col].isRevealed = false
                 self.calculateIsMineLocationForSquare(squares[row][col])
             }

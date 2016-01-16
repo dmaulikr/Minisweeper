@@ -1,0 +1,8 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "00adcb6664b677301e37c19964ec068b"
+inputs: 
+- "/Users/sunlisha/Github/Minisweeper/Mineswifter/SquareButton.swift"
+- "/Users/sunlisha/Github/Minisweeper/Mineswifter/Square.swift"
+- "/Users/sunlisha/Github/Minisweeper/Mineswifter/ViewController.swift"
+- "/Users/sunlisha/Github/Minisweeper/Mineswifter/Board.swift"
+- "/Users/sunlisha/Github/Minisweeper/Mineswifter/AppDelegate.swift"

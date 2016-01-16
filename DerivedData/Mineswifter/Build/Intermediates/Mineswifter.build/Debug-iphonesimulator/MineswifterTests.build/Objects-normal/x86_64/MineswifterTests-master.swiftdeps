@@ -1,0 +1,4 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "582bfa280f342e8ee136da304674bd52"
+inputs: 
+- "/Users/sunlisha/Github/Minisweeper/MineswifterTests/MineswifterTests.swift"

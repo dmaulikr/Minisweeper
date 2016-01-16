@@ -1,0 +1,6 @@
+framework module Pods_Mineswifter {
+  umbrella header "Pods-Mineswifter-umbrella.h"
+
+  export *
+  module * { export * }
+}
